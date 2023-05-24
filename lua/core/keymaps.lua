@@ -42,7 +42,7 @@ keymap("n", "x", '"_x', opts)
 
 -- telescope
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts) -- find files within current working directory, respects .gitignore
-keymap("n", "<leader>F", "<cmd>Telescope live_grep<cr>", opts)  -- find string in current working directory as you type
+keymap("n", "<leader>F", "<cmd>Telescope live_grep theme=ivy<cr>", opts)  -- find string in current working directory as you type
 
 -- git
 -- keymap("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opts)
@@ -73,9 +73,10 @@ keymap("n", "<leader>w", "<cmd>w!<CR>", opts)
 --keymap("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", opts)
 
 -- buffers
---keymap("n", "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", opts)
---keymap("n", "<leader>bl", "<cmd>BufferLineCloseRight<cr>", opts)
--- keymap("n", "<leader>bf", "<cmd>Telescope buffers<cr>", opts) -- list open buffers in current neovim instance
+keymap("n", "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", opts)
+keymap("n", "<leader>bl", "<cmd>BufferLineCloseRight<cr>", opts)
+keymap("n", "<leader>bf", "<cmd>Telescope buffers<cr>", opts) -- list open buffers in current neovim instance
+keymap("n", "<leader>c", "<cmd>Bdelete!<CR>", opts)
 
 --- lsp
 keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
@@ -84,11 +85,15 @@ keymap("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{async = true}<cr>", opts)
 
 -- search
--- keymap("n", "<leader>sc", "<cmd>Telescope colorscheme<cr>", opts)
--- keymap("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", opts)
--- keymap("n", "<leader>sk", "<cmd>Telescope keymaps<cr>", opts)
--- keymap("n", "<leader>st", "<cmd>Telescope help_tags<cr>", opts) -- list available help tags
--- keymap("n", "<leader>sf", "<cmd>Telescope grep_string<cr>", opts) -- find string under cursor in current working directory
+keymap("n", "<leader>sc", "<cmd>Telescope colorscheme<cr>", opts)
+keymap("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", opts)
+keymap("n", "<leader>sk", "<cmd>Telescope keymaps<cr>", opts)
+keymap("n", "<leader>st", "<cmd>Telescope help_tags<cr>", opts) -- list available help tags
+keymap("n", "<leader>sf", "<cmd>Telescope grep_string<cr>", opts) -- find string under cursor in current working directory
 
 -- Files
-keymap("n", "<leader>w", "<cmd>w<cr>", opts)
+keymap("n", "<leader>w", "<cmd>w!<cr>", opts)
+keymap("n", "<leader>q", "<cmd>q!<cr>", opts)
+keymap("n", "<leader>p", "\"_dP", opts)
+keymap("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", opts)
+keymap("n", "<leader .>", "<cmd>luafile %<CR>", opts)

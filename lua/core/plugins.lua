@@ -33,6 +33,24 @@ return require('packer').startup(function(use)
   use "L3MON4D3/LuaSnip"
   use "saadparwaiz1/cmp_luasnip"
   use 'rafamadriz/friendly-snippets'
+  use "jose-elias-alvarez/null-ls.nvim"
+
+  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+  use {
+    "windwp/nvim-ts-autotag",
+    config = function() require("nvim-ts-autotag").setup {} end
+  }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+  use "moll/vim-bbye"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

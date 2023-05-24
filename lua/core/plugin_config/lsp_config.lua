@@ -18,8 +18,17 @@ require("lspconfig").lua_ls.setup {
   capabilities = capabilities
 }
 
-
 require("lspconfig").tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities
 }
+
+
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
