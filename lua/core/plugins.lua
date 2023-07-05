@@ -1,84 +1,91 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
-
-return require('packer').startup(function(use)
-  -- essentials
-  use 'wbthomason/packer.nvim'
-  use 'nvim-tree/nvim-tree.lua'
-  use 'nvim-tree/nvim-web-devicons'
-  use 'nvim-lualine/lualine.nvim'
-  use 'nvim-treesitter/nvim-treesitter'
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
-  use {
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-    'neovim/nvim-lspconfig',
-  }
+local plugins = {
+  'wbthomason/packer.nvim',
+  'nvim-tree/nvim-tree.lua',
+  'nvim-tree/nvim-web-devicons',
+  'nvim-lualine/lualine.nvim',
+  'nvim-treesitter/nvim-treesitter',
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.2',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+  'neovim/nvim-lspconfig',
   -- cmp
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use "L3MON4D3/LuaSnip"
-  use "saadparwaiz1/cmp_luasnip"
-  use 'rafamadriz/friendly-snippets'
-  use "jose-elias-alvarez/null-ls.nvim"
+  'hrsh7th/nvim-cmp',
+  'hrsh7th/cmp-nvim-lsp',
+  "L3MON4D3/LuaSnip",
+  "saadparwaiz1/cmp_luasnip",
+  'rafamadriz/friendly-snippets',
+  "jose-elias-alvarez/null-ls.nvim",
 
   -- colors
-  use 'ellisonleao/gruvbox.nvim'
-  use "rebelot/kanagawa.nvim"
+  'ellisonleao/gruvbox.nvim',
+  "rebelot/kanagawa.nvim",
 
   -- ui
-  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
 
+  { 'akinsho/bufferline.nvim', version = "*",    dependencies = 'nvim-tree/nvim-web-devicons' },
   --utils
-  use {
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-  }
-  use {
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
+  },
+  {
     "windwp/nvim-ts-autotag",
     config = function() require("nvim-ts-autotag").setup {} end
-  }
+  },
+  "moll/vim-bbye",
+  {
+    "ggandor/leap.nvim",
+    config = function() require('leap').add_default_mappings() end
+  },
 
   -- comments
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
-  use {
+  'JoosepAlviste/nvim-ts-context-commentstring',
+  {
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup {
         pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
       }
     end
-  }
-  use "moll/vim-bbye"
+  },
 
   --github
-  use {
+  "tpope/vim-fugitive",
+  {
     'lewis6991/gitsigns.nvim',
     config = function()
       require('gitsigns').setup()
     end
-  }
-  -- colors
-  use "folke/tokyonight.nvim"
-  use 'norcalli/nvim-colorizer.lua'
-  use { "catppuccin/nvim", as = "catppuccin" }
+  },
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+  -- colors
+  "folke/tokyonight.nvim",
+  'norcalli/nvim-colorizer.lua',
+  { "catppuccin/nvim",         as = "catppuccin" },
+
+
+
+}
+
+local opts = {}
+
+require("lazy").setup(plugins, opts)

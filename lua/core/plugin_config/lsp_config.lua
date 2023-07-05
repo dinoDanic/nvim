@@ -44,6 +44,9 @@ require("lspconfig").tailwindcss.setup {
 }
 
 
+vim.diagnostic.config({ virtual_text = false })
+
+
 
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
