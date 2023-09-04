@@ -1,12 +1,13 @@
 vim.o.termguicolors = true
 -- Colorize
-require 'colorizer'.setup({
-  '*',
-}, { mode = 'foreground', names = false })
+-- require 'colorizer'.setup({
+--   '*',
+-- }, { mode = 'foreground', names = false })
 
 -- vim.cmd [[ colorscheme gruvbox ]]
-vim.cmd [[ colorscheme tokyonight ]]
--- colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
--- vim.cmd [[ colorscheme catppuccin ]]
+-- vim.cmd [[ colorscheme night-owl ]]
+-- vim.cmd [[ colorscheme rose-pine ]]
+-- vim.cmd [[ colorscheme nightfly ]]
+-- vim.cmd [[ colorscheme tokyonight ]]
+vim.cmd [[ colorscheme catppuccin-mocha ]]
 -- vim.cmd [[ colorscheme kanagawa ]]
-

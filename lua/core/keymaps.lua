@@ -41,8 +41,8 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("n", "x", '"_x', opts)
 
 -- telescope
-keymap("n", "<leader>f", "<cmd>Telescope find_files hidden=true<cr>", opts)          -- find files within current working directory, respects .gitignore
-keymap("n", "<leader>F", "<cmd>Telescope live_grep theme=ivy<cr>", opts) -- find string in current working directory as you type
+keymap("n", "<leader>f", "<cmd>Telescope find_files hidden=true<cr>", opts) -- find files within current working directory, respects .gitignore
+keymap("n", "<leader>F", "<cmd>Telescope live_grep theme=ivy<cr>", opts)    -- find string in current working directory as you type
 
 -- git
 -- keymap("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opts)

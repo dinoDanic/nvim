@@ -13,10 +13,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  'wbthomason/packer.nvim',
   'nvim-tree/nvim-tree.lua',
   'nvim-tree/nvim-web-devicons',
-  'nvim-lualine/lualine.nvim',
   'nvim-treesitter/nvim-treesitter',
   {
     'nvim-telescope/telescope.nvim',
@@ -34,23 +32,17 @@ local plugins = {
   'rafamadriz/friendly-snippets',
   "jose-elias-alvarez/null-ls.nvim",
 
-  -- colors
-  'ellisonleao/gruvbox.nvim',
-  "rebelot/kanagawa.nvim",
-
+  -- quick fix actions
+  "kevinhwang91/nvim-bqf",
   -- ui
-
-  { 'akinsho/bufferline.nvim', version = "*",    dependencies = 'nvim-tree/nvim-web-devicons' },
+  { 'akinsho/bufferline.nvim',    version = "*",     dependencies = 'nvim-tree/nvim-web-devicons' },
   --utils
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) function
   },
-  {
-    "windwp/nvim-ts-autotag",
-    config = function() require("nvim-ts-autotag").setup {} end
-  },
+  "windwp/nvim-ts-autotag",
   "moll/vim-bbye",
   {
     "ggandor/leap.nvim",
@@ -79,10 +71,9 @@ local plugins = {
 
   -- colors
   "folke/tokyonight.nvim",
-  'norcalli/nvim-colorizer.lua',
-  { "catppuccin/nvim",         as = "catppuccin" },
-
-
+  { "catppuccin/nvim",            as = "catppuccin" },
+  { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false,                                priority = 1000 },
+  "oxfist/night-owl.nvim",
 
 }
 
