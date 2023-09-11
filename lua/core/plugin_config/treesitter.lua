@@ -10,8 +10,8 @@ require 'nvim-treesitter.configs'.setup {
   auto_install = true,
   autotag = {
     enable = true,
+    enable_close_on_slash = false,
   },
-
   -- List of parsers to ignore installing (for "all")
   -- ignore_install = { "javascript" },
 

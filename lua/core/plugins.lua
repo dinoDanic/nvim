@@ -71,6 +71,7 @@ local plugins = {
 
   -- colors
   "folke/tokyonight.nvim",
+  "rebelot/kanagawa.nvim",
   { "catppuccin/nvim",            as = "catppuccin" },
   { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false,                                priority = 1000 },
   "oxfist/night-owl.nvim",
