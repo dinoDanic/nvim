@@ -13,7 +13,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  'nvim-tree/nvim-tree.lua',
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  },
   'nvim-tree/nvim-web-devicons',
   'nvim-treesitter/nvim-treesitter',
   {
@@ -71,7 +79,7 @@ local plugins = {
 
   -- colors
   "folke/tokyonight.nvim",
-'navarasu/onedark.nvim',
+  'navarasu/onedark.nvim',
   "rebelot/kanagawa.nvim",
   { "catppuccin/nvim",            as = "catppuccin" },
   { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false,                                priority = 1000 },

@@ -9,6 +9,6 @@ vim.o.termguicolors = true
 -- vim.cmd [[ colorscheme rose-pine ]]
 -- vim.cmd [[ colorscheme nightfly ]]
 -- vim.cmd [[ colorscheme tokyonight ]]
--- vim.cmd [[ colorscheme catppuccin ]]
+vim.cmd [[ colorscheme catppuccin ]]
 -- vim.cmd("colorscheme kanagawa")
-vim.cmd("colorscheme onedark")
+-- vim.cmd("colorscheme onedark")

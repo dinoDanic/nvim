@@ -65,10 +65,18 @@ keymap("n", "<leader>h", ":nohl<CR>", opts)
 keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
 -- nvim tree
-keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
-keymap("n", "<leader>r", "<cmd>NvimTreeFocus<cr>", opts)
-keymap("n", "<leader>R", "<cmd>NvimTreeCollapse<cr>", opts)
-keymap("n", "<leader>w", "<cmd>w!<CR>", opts)
+-- keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
+-- keymap("n", "<leader>r", "<cmd>NvimTreeFocus<cr>", opts)
+-- keymap("n", "<leader>R", "<cmd>NvimTreeCollapse<cr>", opts)
+-- keymap("n", "<leader>w", "<cmd>w!<CR>", opts)
+--keymap("n", "<leader>c", "<cmd>Bdelete!<CR>", opts)
+--keymap("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", opts)
+
+-- nvim tree
+keymap("n", "<leader>e", "<cmd>Neotree float reveal<cr>", opts)
+-- keymap("n", "<leader>r", "<cmd>NvimTreeFocus<cr>", opts)
+-- keymap("n", "<leader>R", "<cmd>NvimTreeCollapse<cr>", opts)
+-- keymap("n", "<leader>w", "<cmd>w!<CR>", opts)
 --keymap("n", "<leader>c", "<cmd>Bdelete!<CR>", opts)
 --keymap("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", opts)
 
