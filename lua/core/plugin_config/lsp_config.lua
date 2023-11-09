@@ -25,6 +25,16 @@ require("lspconfig").tsserver.setup {
   capabilities = capabilities
 }
 
+require("lspconfig").gopls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+require("lspconfig").svelte.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
 require("lspconfig").elixirls.setup {
   on_attach = on_attach,
   capabilities = capabilities
@@ -41,6 +51,11 @@ require("lspconfig").tailwindcss.setup {
       },
     },
   },
+}
+
+require("lspconfig").astro.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
 }
 
 

@@ -13,15 +13,18 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    }
-  },
+  -- TREE
+  'nvim-tree/nvim-tree.lua',
+  -- {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   branch = "v3.x",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+  --     "MunifTanjim/nui.nvim",
+  --   }
+  -- },
+
   'nvim-tree/nvim-web-devicons',
   'nvim-treesitter/nvim-treesitter',
   {
@@ -42,8 +45,16 @@ local plugins = {
 
   -- quick fix actions
   "kevinhwang91/nvim-bqf",
+
+  -- lua line
+  -- 'nvim-lualine/lualine.nvim',
   -- ui
-  { 'akinsho/bufferline.nvim',    version = "*",     dependencies = 'nvim-tree/nvim-web-devicons' },
+  {
+    'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies =
+    'nvim-tree/nvim-web-devicons'
+  },
   --utils
   {
     'windwp/nvim-autopairs',
@@ -78,12 +89,8 @@ local plugins = {
   },
 
   -- colors
-  "folke/tokyonight.nvim",
-  'navarasu/onedark.nvim',
-  "rebelot/kanagawa.nvim",
-  { "catppuccin/nvim",            as = "catppuccin" },
-  { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false,                                priority = 1000 },
-  "oxfist/night-owl.nvim",
+  'shaunsingh/nord.nvim',
+  { "catppuccin/nvim", as = "catppuccin" },
 
 }
 

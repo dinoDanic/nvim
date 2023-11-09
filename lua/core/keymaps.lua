@@ -17,6 +17,9 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- keymap("n", "<C-a>", ":!tmux resize-pane -L 10 <cr>", opts)
+-- keymap("n", "<C-s>", ":!tmux resize-pane -R 10 <cr>", opts)
+
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -65,20 +68,15 @@ keymap("n", "<leader>h", ":nohl<CR>", opts)
 keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
 -- nvim tree
--- keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
--- keymap("n", "<leader>r", "<cmd>NvimTreeFocus<cr>", opts)
--- keymap("n", "<leader>R", "<cmd>NvimTreeCollapse<cr>", opts)
--- keymap("n", "<leader>w", "<cmd>w!<CR>", opts)
---keymap("n", "<leader>c", "<cmd>Bdelete!<CR>", opts)
---keymap("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", opts)
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>r", "<cmd>NvimTreeFocus<cr>", opts)
+keymap("n", "<leader>R", "<cmd>NvimTreeCollapse<cr>", opts)
+keymap("n", "<leader>w", "<cmd>w!<CR>", opts)
 
 -- nvim tree
-keymap("n", "<leader>e", "<cmd>Neotree float reveal<cr>", opts)
--- keymap("n", "<leader>r", "<cmd>NvimTreeFocus<cr>", opts)
--- keymap("n", "<leader>R", "<cmd>NvimTreeCollapse<cr>", opts)
--- keymap("n", "<leader>w", "<cmd>w!<CR>", opts)
---keymap("n", "<leader>c", "<cmd>Bdelete!<CR>", opts)
---keymap("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", opts)
+-- keymap("n", "<leader>e", "<cmd>Neotree toggle float<cr>", opts)
+-- keymap("n", "<leader>e", "<cmd>Neotree toggle reveal<cr>", opts)
+-- keymap("n", "<leader>e", "<cmd>:Explore<cr><cr>", opts)
 
 -- buffers
 keymap("n", "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", opts)
