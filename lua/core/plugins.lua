@@ -14,16 +14,16 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   -- TREE
-  'nvim-tree/nvim-tree.lua',
-  -- {
-  --   "nvim-neo-tree/neo-tree.nvim",
-  --   branch = "v3.x",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-  --     "MunifTanjim/nui.nvim",
-  --   }
-  -- },
+  -- 'nvim-tree/nvim-tree.lua',
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  },
 
   'nvim-tree/nvim-web-devicons',
   'nvim-treesitter/nvim-treesitter',
@@ -44,7 +44,7 @@ local plugins = {
   "jose-elias-alvarez/null-ls.nvim",
 
   -- quick fix actions
-  "kevinhwang91/nvim-bqf",
+  -- "kevinhwang91/nvim-bqf",
 
   -- lua line
   -- 'nvim-lualine/lualine.nvim',
@@ -63,10 +63,10 @@ local plugins = {
   },
   "windwp/nvim-ts-autotag",
   "moll/vim-bbye",
-  {
-    "ggandor/leap.nvim",
-    config = function() require('leap').add_default_mappings() end
-  },
+  -- {
+  --   "ggandor/leap.nvim",
+  --   config = function() require('leap').add_default_mappings() end
+  -- },
 
   -- comments
   'JoosepAlviste/nvim-ts-context-commentstring',
@@ -90,7 +90,7 @@ local plugins = {
 
   -- colors
   'shaunsingh/nord.nvim',
-  { "catppuccin/nvim", as = "catppuccin" },
+  -- { "catppuccin/nvim", as = "catppuccin" },
 
 }
 

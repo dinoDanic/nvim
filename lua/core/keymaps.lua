@@ -48,18 +48,18 @@ keymap("n", "<leader>f", "<cmd>Telescope find_files hidden=true<cr>", opts) -- f
 keymap("n", "<leader>F", "<cmd>Telescope live_grep theme=ivy<cr>", opts)    -- find string in current working directory as you type
 
 -- git
--- keymap("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opts)
--- keymap("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", opts)
--- keymap("n", "<leader>gl", "<cmd>lua require 'gitsigns'.blame_line()<cr>", opts)
--- keymap("n", "<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", opts)
--- keymap("n", "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", opts)
--- keymap("n", "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", opts)
--- keymap("n", "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", opts)
--- keymap("n", "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", opts)
--- keymap("n", "<leader>go", "<cmd>Telescope git_status<cr>", opts)
--- keymap("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", opts)
--- keymap("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", opts)
--- keymap("n", "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", opts)
+keymap("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opts)
+keymap("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", opts)
+keymap("n", "<leader>gl", "<cmd>lua require 'gitsigns'.blame_line()<cr>", opts)
+keymap("n", "<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", opts)
+keymap("n", "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", opts)
+keymap("n", "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", opts)
+keymap("n", "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", opts)
+keymap("n", "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", opts)
+keymap("n", "<leader>go", "<cmd>Telescope git_status<cr>", opts)
+keymap("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", opts)
+keymap("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", opts)
+keymap("n", "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", opts)
 
 -- clear search highlights
 keymap("n", "<leader>h", ":nohl<CR>", opts)
@@ -68,14 +68,14 @@ keymap("n", "<leader>h", ":nohl<CR>", opts)
 keymap("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
 -- nvim tree
-keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
-keymap("n", "<leader>r", "<cmd>NvimTreeFocus<cr>", opts)
-keymap("n", "<leader>R", "<cmd>NvimTreeCollapse<cr>", opts)
-keymap("n", "<leader>w", "<cmd>w!<CR>", opts)
+-- keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
+-- keymap("n", "<leader>r", "<cmd>NvimTreeFocus<cr>", opts)
+-- keymap("n", "<leader>R", "<cmd>NvimTreeCollapse<cr>", opts)
+-- keymap("n", "<leader>w", "<cmd>w!<CR>", opts)
 
 -- nvim tree
 -- keymap("n", "<leader>e", "<cmd>Neotree toggle float<cr>", opts)
--- keymap("n", "<leader>e", "<cmd>Neotree toggle reveal<cr>", opts)
+keymap("n", "<leader>e", "<cmd>Neotree toggle reveal<cr>", opts)
 -- keymap("n", "<leader>e", "<cmd>:Explore<cr><cr>", opts)
 
 -- buffers
