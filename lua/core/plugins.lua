@@ -41,7 +41,19 @@ local plugins = {
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
   'rafamadriz/friendly-snippets',
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
+
+  --flutter
+  {
+    'akinsho/flutter-tools.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim',
+    },
+    config = function()
+      require("flutter-tools").setup {} -- use defaults
+    end,
+  },
 
   -- quick fix actions
   -- "kevinhwang91/nvim-bqf",
@@ -90,7 +102,14 @@ local plugins = {
 
   -- colors
   'shaunsingh/nord.nvim',
-  -- { "catppuccin/nvim", as = "catppuccin" },
+  { "catppuccin/nvim",  as = "catppuccin" },
+  { 'rose-pine/neovim', name = 'rose-pine' },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  }
 
 }
 

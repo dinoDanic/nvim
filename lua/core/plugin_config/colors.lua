@@ -6,7 +6,9 @@
 
 -- vim.cmd [[ colorscheme gruvbox ]]
 -- vim.cmd [[ colorscheme night-owl ]]
--- vim.cmd [[ colorscheme rose-pine ]]
+-- vim.cmd [[ colorscheme catppuccin ]]
+-- vim.cmd [[ colorscheme nord ]]
+vim.cmd [[ colorscheme rose-pine ]]
 -- vim.cmd [[ colorscheme nightfly ]]
 -- vim.cmd [[ colorscheme tokyonight ]]
 -- vim.cmd("colorscheme kanagawa")
@@ -22,5 +24,3 @@
 -- vim.cmd "let &fcs='eob: '"
 
 
--- vim.cmd [[ colorscheme catppuccin ]]
-vim.cmd [[ colorscheme nord ]]
