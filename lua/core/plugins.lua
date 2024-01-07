@@ -13,6 +13,32 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+
+  -- new lsp
+  -- LSP Support
+  {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
+    lazy = true,
+    config = false,
+  },
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      { 'hrsh7th/cmp-nvim-lsp' },
+    }
+  },
+  -- Autocompletion
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      { 'L3MON4D3/LuaSnip' }
+    },
+  },
+  -- null ls none ls
+  "nvimtools/none-ls.nvim",
+
+
   -- TREE
   -- 'nvim-tree/nvim-tree.lua',
   {
@@ -34,14 +60,6 @@ local plugins = {
   },
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
-  'neovim/nvim-lspconfig',
-  -- cmp
-  'hrsh7th/nvim-cmp',
-  'hrsh7th/cmp-nvim-lsp',
-  "L3MON4D3/LuaSnip",
-  "saadparwaiz1/cmp_luasnip",
-  'rafamadriz/friendly-snippets',
-  "nvimtools/none-ls.nvim",
 
   --flutter
   {
@@ -55,12 +73,6 @@ local plugins = {
     end,
   },
 
-  -- quick fix actions
-  -- "kevinhwang91/nvim-bqf",
-
-  -- lua line
-  -- 'nvim-lualine/lualine.nvim',
-  -- ui
   {
     'akinsho/bufferline.nvim',
     version = "*",
