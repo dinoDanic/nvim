@@ -19,7 +19,7 @@ local plugins = {
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v3.x',
-    lazy = true,
+    lazy = false,
     config = false,
   },
   {
@@ -35,9 +35,9 @@ local plugins = {
       { 'L3MON4D3/LuaSnip' }
     },
   },
+  { "rafamadriz/friendly-snippets" },
   -- null ls none ls
   "nvimtools/none-ls.nvim",
-
 
   -- TREE
   -- 'nvim-tree/nvim-tree.lua',
@@ -62,16 +62,16 @@ local plugins = {
   'williamboman/mason-lspconfig.nvim',
 
   --flutter
-  {
-    'akinsho/flutter-tools.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim',
-    },
-    config = function()
-      require("flutter-tools").setup {} -- use defaults
-    end,
-  },
+  -- {
+  --   'akinsho/flutter-tools.nvim',
+  --   dependencies = {
+  --     'nvim-lua/plenary.nvim',
+  --     'stevearc/dressing.nvim',
+  --   },
+  --   config = function()
+  --     require("flutter-tools").setup {} -- use defaults
+  --   end,
+  -- },
 
   {
     'akinsho/bufferline.nvim',
@@ -114,14 +114,17 @@ local plugins = {
 
   -- colors
   'shaunsingh/nord.nvim',
-  { "catppuccin/nvim",  as = "catppuccin" },
-  { 'rose-pine/neovim', name = 'rose-pine' },
+  { "catppuccin/nvim",             as = "catppuccin" },
+  { 'rose-pine/neovim',            name = 'rose-pine' },
   {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     opts = {},
-  }
+  },
+
+  -- copilot
+  "github/copilot.vim"
 
 }
 

@@ -8,7 +8,7 @@
 -- vim.cmd [[ colorscheme night-owl ]]
 -- vim.cmd [[ colorscheme catppuccin ]]
 -- vim.cmd [[ colorscheme nord ]]
-vim.cmd [[ colorscheme rose-pine ]]
+vim.cmd [[ colorscheme rose-pine-moon ]]
 -- vim.cmd [[ colorscheme nightfly ]]
 -- vim.cmd [[ colorscheme tokyonight ]]
 -- vim.cmd("colorscheme kanagawa")
