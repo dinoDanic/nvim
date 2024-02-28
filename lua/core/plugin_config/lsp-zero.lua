@@ -5,9 +5,9 @@ require('mason').setup({})
 
 require('mason-lspconfig').setup({
   ensure_installed = {},
-  -- handlers = {
-  --   lsp_zero.default_setup,
-  -- },
+  handlers = {
+    lsp_zero.default_setup,
+  },
 })
 
 lsp_zero.on_attach(function(client, bufnr)
