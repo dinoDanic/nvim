@@ -20,6 +20,7 @@ require('lspconfig').lua_ls.setup({})
 require("lspconfig").svelte.setup({})
 require("lspconfig").elixirls.setup({})
 require("lspconfig").templ.setup({})
+require("lspconfig").gleam.setup({})
 require("lspconfig").gopls.setup({
   fileType = { "html", "templ" }
 })
@@ -43,6 +44,7 @@ require("lspconfig").tailwindcss.setup {
 vim.diagnostic.config({ virtual_text = false })
 
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     vim.highlight.on_yank()

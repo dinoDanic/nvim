@@ -28,6 +28,7 @@ local plugins = {
       { 'hrsh7th/cmp-nvim-lsp' },
     }
   },
+  -- { "gleam-lang/gleam.vim" },
   -- Autocompletion
   {
     'hrsh7th/nvim-cmp',
@@ -123,8 +124,6 @@ local plugins = {
     opts = {},
   },
 
-  -- copilot
-  "github/copilot.vim"
 
 }
 
