@@ -28,14 +28,14 @@ local plugins = {
       { 'hrsh7th/cmp-nvim-lsp' },
     }
   },
-  -- { "gleam-lang/gleam.vim" },
-  -- Autocompletion
+  -- Autocompletion and Snippets
   {
     'hrsh7th/nvim-cmp',
     dependencies = {
       { 'L3MON4D3/LuaSnip' }
     },
   },
+  { 'saadparwaiz1/cmp_luasnip' },
   { "rafamadriz/friendly-snippets" },
   -- null ls none ls
   "nvimtools/none-ls.nvim",
@@ -115,8 +115,8 @@ local plugins = {
 
   -- colors
   'shaunsingh/nord.nvim',
-  { "catppuccin/nvim",             as = "catppuccin" },
-  { 'rose-pine/neovim',            name = 'rose-pine' },
+  { "catppuccin/nvim",  as = "catppuccin" },
+  { 'rose-pine/neovim', name = 'rose-pine' },
   {
     "folke/tokyonight.nvim",
     lazy = false,

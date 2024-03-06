@@ -1,14 +1,9 @@
 local cmp = require('cmp')
 local cmp_select_opts = { behavior = cmp.SelectBehavior.Select }
 
-local cmp_action = require('lsp-zero').cmp_action()
-
 require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
-  sources = {
-    { name = 'nvim_lsp' },
-  },
   mapping = {
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ['<C-e>'] = cmp.mapping.abort(),
@@ -39,6 +34,10 @@ cmp.setup({
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
     end,
+  },
+  sources = {
+    { name = "nvim_lsp", keyword_length = 1 },
+    { name = "luasnip",  keyword_length = 2 },
   },
   window = {
     documentation = {

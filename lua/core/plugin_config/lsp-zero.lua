@@ -20,6 +20,7 @@ require("lspconfig").svelte.setup({})
 require("lspconfig").elixirls.setup({})
 require("lspconfig").templ.setup({})
 require("lspconfig").gleam.setup({})
+require("lspconfig").dartls.setup({})
 require("lspconfig").gopls.setup({
   fileType = { "html", "templ" }
 })
