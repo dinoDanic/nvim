@@ -51,9 +51,9 @@ local plugins = {
       "MunifTanjim/nui.nvim",
     }
   },
-
   'nvim-tree/nvim-web-devicons',
   'nvim-treesitter/nvim-treesitter',
+
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.2',
@@ -62,6 +62,20 @@ local plugins = {
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
 
+  -- dap
+  { "folke/neodev.nvim", opts = {} },
+  'mfussenegger/nvim-dap',
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+    config = function()
+      require("neodev").setup({
+        library = { plugins = { "nvim-dap-ui" }, types = true },
+      })
+    end
+  },
+
+
   --flutter
   {
     'akinsho/flutter-tools.nvim',
@@ -69,9 +83,6 @@ local plugins = {
       'nvim-lua/plenary.nvim',
       'stevearc/dressing.nvim',
     },
-    config = function()
-      require("flutter-tools").setup {} -- use defaults
-    end,
   },
 
   {
@@ -115,8 +126,8 @@ local plugins = {
 
   -- colors
   'shaunsingh/nord.nvim',
-  { "catppuccin/nvim",  as = "catppuccin" },
-  { 'rose-pine/neovim', name = 'rose-pine' },
+  { "catppuccin/nvim",   as = "catppuccin" },
+  { 'rose-pine/neovim',  name = 'rose-pine' },
   {
     "folke/tokyonight.nvim",
     lazy = false,

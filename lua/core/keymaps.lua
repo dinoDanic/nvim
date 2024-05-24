@@ -96,7 +96,8 @@ keymap("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", opts)
 keymap("n", "<leader>sk", "<cmd>Telescope keymaps<cr>", opts)
 keymap("n", "<leader>st", "<cmd>Telescope help_tags<cr>", opts)        -- list available help tags
 keymap("n", "<leader>ss", "<cmd>Telescope grep_string<cr>", opts)      -- find string under cursor in current working directory
-keymap("n", "<leader>sf", "<cmd>Telescope flutter commands<cr>", opts) 
+-- keymap("n", "<leader>sf", "<cmd>Telescope flutter commands<cr>", opts)  
+keymap("n", "<leader>sf", "<cmd>Telescope flutter fvm commands<cr>", opts)  -- with fvm
 
 -- register
 keymap("n", "<leader>\"", "<cmd>register<cr>", opts) -- find string under cursor in current working directory
