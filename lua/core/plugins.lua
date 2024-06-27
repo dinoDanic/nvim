@@ -56,7 +56,7 @@ local plugins = {
 
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.2',
+    tag = '0.1.8',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   'williamboman/mason.nvim',
@@ -95,7 +95,9 @@ local plugins = {
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
-    opts = {} -- this is equalent to setup({}) function
+    config = true
+    -- use opts = {} for passing setup options
+    -- this is equalent to setup({}) function
   },
   "windwp/nvim-ts-autotag",
   "moll/vim-bbye",
