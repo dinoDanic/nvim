@@ -101,10 +101,10 @@ local plugins = {
   },
   "windwp/nvim-ts-autotag",
   "moll/vim-bbye",
-  -- {
-  --   "ggandor/leap.nvim",
-  --   config = function() require('leap').add_default_mappings() end
-  -- },
+  {
+    "ggandor/leap.nvim",
+    config = function() require('leap').create_default_mappings() end
+  },
 
   -- comments
   'JoosepAlviste/nvim-ts-context-commentstring',
