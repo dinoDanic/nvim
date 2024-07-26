@@ -14,10 +14,10 @@ local options = {
   smartindent = true,                              -- make indenting smarter again
   splitbelow = true,                               -- force all horizontal splits to go below current window
   splitright = true,                               -- force all vertical splits to go to the right of current window
-  swapfile = false,                                -- creates a swapfile
-  termguicolors = true,                            -- set term gui colors (most terminals support this)
+  swapfile = false,                                -- creates a swap file
+  termguicolors = true,                            -- set term ui colors (most terminals support this)
   undofile = true,                                 -- enable persistent undo
-  timeoutlen =  500,                               -- time to wait for a mapped sequence to complete (in milliseconds)
+  timeoutlen = 500,                                -- time to wait for a mapped sequence to complete (in milliseconds)
   updatetime = 50,                                 -- faster completion (4000ms default)
   writebackup = false,                             -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true,                                -- convert tabs to spaces
@@ -38,13 +38,22 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+-- set cmd height in macro mode
 vim.api.nvim_command("autocmd RecordingEnter * set cmdheight=1")
 vim.api.nvim_command("autocmd RecordingLeave * set cmdheight=0")
 
--- resize sceen
+-- re size screen
 vim.api.nvim_exec([[
   augroup AutoEqualize
     autocmd!
     autocmd VimEnter,VimResized * :wincmd =
   augroup END
 ]], false)
+
+-- remove auto comment line
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
+vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
+
+-- spell check
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true

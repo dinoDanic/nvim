@@ -14,8 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 
-  -- new lsp
-  -- LSP Support
+  -------------------------------------LSP-------------------------------------
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v3.x',
@@ -28,7 +27,6 @@ local plugins = {
       { 'hrsh7th/cmp-nvim-lsp' },
     }
   },
-  -- Autocompletion and Snippets
   {
     'hrsh7th/nvim-cmp',
     dependencies = {
@@ -37,10 +35,23 @@ local plugins = {
   },
   { 'saadparwaiz1/cmp_luasnip' },
   { "rafamadriz/friendly-snippets" },
-  -- null ls none ls
-  "nvimtools/none-ls.nvim",
 
-  -- TREE
+  --non ls
+  "nvimtools/none-ls.nvim",
+  -- mason
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+
+  --flutter
+  {
+    'akinsho/flutter-tools.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim',
+    },
+  },
+
+  -------------------------------------TREE-------------------------------------
   -- 'nvim-tree/nvim-tree.lua',
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -54,36 +65,15 @@ local plugins = {
   'nvim-tree/nvim-web-devicons',
   'nvim-treesitter/nvim-treesitter',
 
+  -------------------------------------TELESCOPE-------------------------------------
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  'williamboman/mason.nvim',
-  'williamboman/mason-lspconfig.nvim',
-
-  -- dap
-  { "folke/neodev.nvim", opts = {} },
-  'mfussenegger/nvim-dap',
-  {
-    "rcarriga/nvim-dap-ui",
-    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
-    config = function()
-      require("neodev").setup({
-        library = { plugins = { "nvim-dap-ui" }, types = true },
-      })
-    end
-  },
 
 
-  --flutter
-  {
-    'akinsho/flutter-tools.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim',
-    },
-  },
+  -------------------------------------UI-------------------------------------
 
   {
     'akinsho/bufferline.nvim',
@@ -91,7 +81,7 @@ local plugins = {
     dependencies =
     'nvim-tree/nvim-web-devicons'
   },
-  --utils
+  -------------------------------------UTILS-------------------------------------
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
@@ -105,8 +95,6 @@ local plugins = {
     "ggandor/leap.nvim",
     config = function() require('leap').create_default_mappings() end
   },
-
-  -- comments
   'JoosepAlviste/nvim-ts-context-commentstring',
   {
     'numToStr/Comment.nvim',
@@ -116,8 +104,6 @@ local plugins = {
       }
     end
   },
-
-  --github
   "tpope/vim-fugitive",
   {
     'lewis6991/gitsigns.nvim',
@@ -125,18 +111,52 @@ local plugins = {
       require('gitsigns').setup()
     end
   },
-
-  -- colors
-  'shaunsingh/nord.nvim',
-  { "catppuccin/nvim",   as = "catppuccin" },
-  { 'rose-pine/neovim',  name = 'rose-pine' },
   {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        theme = 'hyper',
+        config = {
+          week_header = {
+            enable = true,
+          },
+          shortcut = {
+            { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+            {
+              icon = ' ',
+              icon_hl = '@variable',
+              desc = 'Files',
+              group = 'Label',
+              action = 'Telescope find_files',
+              key = 'f',
+            },
+
+          },
+        },
+      }
+    end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
   },
 
+  -------------------------------------COLORS-------------------------------------
+  -- 'shaunsingh/nord.nvim',
+  -- { "catppuccin/nvim", as = "catppuccin" },
+  -- {
+  --   "craftzdog/solarized-osaka.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  -- },
+  -- "rebelot/kanagawa.nvim",
+  "EdenEast/nightfox.nvim",
+  -- { 'rose-pine/neovim', name = 'rose-pine' },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  -- },
 
 }
 
