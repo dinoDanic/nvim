@@ -114,7 +114,12 @@ local plugins = {
 
   -------------------------------------COLORS-------------------------------------
   -- 'shaunsingh/nord.nvim',
-  -- { "catppuccin/nvim", as = "catppuccin" },
+  { "catppuccin/nvim", as = "catppuccin" },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+  },
   -- {
   --   "craftzdog/solarized-osaka.nvim",
   --   lazy = false,

@@ -14,7 +14,7 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 
-require('lspconfig').tsserver.setup({})
+require('lspconfig').ts_ls.setup({})
 require('lspconfig').lua_ls.setup({})
 require("lspconfig").svelte.setup({})
 require("lspconfig").elixirls.setup({})

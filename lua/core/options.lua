@@ -55,5 +55,5 @@ vim.cmd('autocmd BufEnter * set formatoptions-=cro')
 vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 
 -- spell check
-vim.opt.spelllang = 'en_us'
-vim.opt.spell = true
+-- vim.opt.spelllang = 'en_us'
+-- vim.opt.spell = true
