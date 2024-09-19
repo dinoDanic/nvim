@@ -36,5 +36,5 @@ vim.cmd "au ColorScheme * hi NormalFloat ctermbg=none guibg=none"
 vim.cmd "au ColorScheme * hi TabLine ctermbg=none guibg=none"
 
 
--- vim.cmd [[ colorscheme catppuccin-macchiato ]]
-vim.cmd [[ colorscheme cyberdream ]]
+vim.cmd [[ colorscheme catppuccin-macchiato ]]
+-- vim.cmd [[ colorscheme cyberdream ]]
