@@ -113,13 +113,22 @@ local plugins = {
   },
 
   -------------------------------------COLORS-------------------------------------
-  -- 'shaunsingh/nord.nvim',
-  { "catppuccin/nvim", as = "catppuccin" },
+  'shaunsingh/nord.nvim',
   {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
   },
+  { "catppuccin/nvim", as = "catppuccin" },
+  -- {
+  --   "scottmckendry/cyberdream.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
   -- {
   --   "craftzdog/solarized-osaka.nvim",
   --   lazy = false,

@@ -89,6 +89,7 @@ keymap("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 keymap("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
 keymap("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{async = true}<cr>", opts)
+keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts) -- Rename with LSP
 
 -- search
 keymap("n", "<leader>sc", "<cmd>Telescope colorscheme<cr>", opts)
