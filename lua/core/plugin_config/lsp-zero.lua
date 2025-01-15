@@ -16,14 +16,14 @@ end)
 
 require('lspconfig').ts_ls.setup({})
 require('lspconfig').lua_ls.setup({})
-require("lspconfig").svelte.setup({})
+-- require("lspconfig").svelte.setup({})
 require("lspconfig").elixirls.setup({})
-require("lspconfig").templ.setup({})
-require("lspconfig").gleam.setup({})
-require("lspconfig").dartls.setup({})
-require("lspconfig").gopls.setup({
-  fileType = { "html", "templ" }
-})
+-- require("lspconfig").templ.setup({})
+-- require("lspconfig").gleam.setup({})
+-- require("lspconfig").dartls.setup({})
+-- require("lspconfig").gopls.setup({
+--   fileType = { "html", "templ" }
+-- })
 
 require("lspconfig").tailwindcss.setup {
   filetypes = { "templ", "astro", "javascript", "typescript", "react", "svelte" },

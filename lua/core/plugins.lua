@@ -123,27 +123,27 @@ local plugins = {
       -- refer to the configuration section below
     }
   },
-  { "catppuccin/nvim", as = "catppuccin" },
-  -- {
-  --   "scottmckendry/cyberdream.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  -- },
-  -- {
-  --   "craftzdog/solarized-osaka.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  -- },
-  -- "rebelot/kanagawa.nvim",
+  { "catppuccin/nvim",  as = "catppuccin" },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  "rebelot/kanagawa.nvim",
   "EdenEast/nightfox.nvim",
-  -- { 'rose-pine/neovim', name = 'rose-pine' },
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  -- },
+  { 'rose-pine/neovim', name = 'rose-pine' },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
 
 }
 

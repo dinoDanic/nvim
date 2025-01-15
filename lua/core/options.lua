@@ -54,6 +54,9 @@ vim.api.nvim_exec([[
 vim.cmd('autocmd BufEnter * set formatoptions-=cro')
 vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 
+-- remove status bar
+vim.opt.laststatus = 0
+
 -- spell check
 -- vim.opt.spelllang = 'en_us'
 -- vim.opt.spell = true
